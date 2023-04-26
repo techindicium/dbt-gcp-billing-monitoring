@@ -31,7 +31,7 @@ The package's models can be configured in your `dbt_project.yml` by specifying t
 
 ### Models
 
-```
+```yaml
 models:
     gcp_billing_monitoring:
         staging:
@@ -44,7 +44,7 @@ models:
 
 ### Vars
 
-```
+```yaml
 vars:
     gcp_billing_monitoring:
        gcp_billing_monitoring_start_date: cast('2023-01-01' as date) # inside the double quotes, add the start date of the project
@@ -54,9 +54,9 @@ vars:
 
 The project's sources can be configured in your `source.yml`, normally on your staging folder, by specifying the schema and table names of your billing data table. Since the name can be different by project, a name configuration is needed to ensure your package works.
 
-## Source configuration
+### Source configuration
 
-```
+```yaml
 sources:
 
   - name: gcp_billing
@@ -67,3 +67,7 @@ sources:
         description: "This table contains daily statistics from the organization's BigQuery billing."
         columns:
 ```
+
+## Running the models
+
+After setting up the package in `dbt_project.yml` and `source.yml` as the previous steps, you can now run the package with the following command line: `dbt run -m gcp_billing_monitoring`. After running it, the 7 models of the package will materialize in your target schema as they have been configured.
