@@ -47,7 +47,7 @@ models:
 ```
 vars:
     gcp_billing_monitoring:
-       gcp_billing_monitoring_start_date: cast('2023-01-01' as date) # in the double quotes you add the start date of the project
+       gcp_billing_monitoring_start_date: cast('2023-01-01' as date) # inside the double quotes, add the start date of the project
 ```
 
 ## Configuring project sources
@@ -61,9 +61,9 @@ sources:
 
   - name: gcp_billing
     description: "Data source containing billing information extracted from Google BigQuery."
-    schema: sandbox_varejo_billing # here you add the name of your schema where the billing data will be stored
+    schema: sandbox_varejo_billing # add the name of your schema where the billing data will be stored
     tables:
-      - name: table_name_gcp_billing_export_resource # here you add the billing export table name
+      - name: table_name_gcp_billing_export_resource # add the billing export table name
         description: "This table contains daily statistics from the organization's BigQuery billing."
         columns:
 ```
