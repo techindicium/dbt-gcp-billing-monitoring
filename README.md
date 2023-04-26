@@ -38,8 +38,6 @@ models:
             materialized: ephemeral
         marts:
             materialized: table
-        tags:
-            - 'gcp_billing'
 ```
 
 ### Vars
