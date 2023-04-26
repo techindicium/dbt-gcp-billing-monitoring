@@ -1,8 +1,6 @@
 # GCP Billing Monitoring
 
-This package allows you to easily monitor and manage your BigQuery cloud service costs, as well as the usage, to finally identify where the resources are   helpful info to improve your data pipeline.
-
-Facilitar o monitoramento e gerenciamento de custos dos serviços do BigQuery, bem como seu uso, a fim de identificar onde estão os maiores gastos com a cloud.
+This package allows you to easily monitor and manage your BigQuery cloud service and usage costs to help improving the billing of your project.
 
 # :running: Quickstart
 
@@ -29,7 +27,7 @@ packages:
 
 ## Configuring models package
 
-The package's models can be configured in your `dbt_project.yml` by specifying the package under `models` and the start date of the airflow monitoring data must be declared in vars.
+The package's models can be configured in your `dbt_project.yml` by specifying the package under `models` and the billing data's start date you want to monitor must be declared in vars.
 
 # Model node
 
@@ -49,7 +47,7 @@ models:
 ```
 vars:
     gcp_billing_monitoring:
-       gcp_billing_monitoring_start_date: cast('2023-01-01' as date) <------------ in the double quotes you add the start date of the project
+       gcp_billing_monitoring_start_date: cast('2023-01-01' as date) # in the double quotes you add the start date of the project
 ```
 
 ## Configuring project sources
@@ -63,9 +61,9 @@ sources:
 
   - name: gcp_billing
     description: "Data source containing billing information extracted from Google BigQuery."
-    schema: sandbox_varejo_billing <------------ here you add the name of your schema where the billing data will be stored
+    schema: sandbox_varejo_billing # here you add the name of your schema where the billing data will be stored
     tables:
-      - name: table_name_gcp_billing_export_resource <------------ here you add the billing export table name
+      - name: table_name_gcp_billing_export_resource # here you add the billing export table name
         description: "This table contains daily statistics from the organization's BigQuery billing."
         columns:
 ```
