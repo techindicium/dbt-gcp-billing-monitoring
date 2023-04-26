@@ -1,6 +1,8 @@
-# Cloud Billing Monitoring
+# GCP Billing Monitoring
 
-This package allows you to easily monitor your airflow DAGs, providing helpful info to improve your data pipeline.
+This package allows you to easily monitor and manage your BigQuery cloud service costs, as well as the usage, to finally identify where the resources are   helpful info to improve your data pipeline.
+
+Facilitar o monitoramento e gerenciamento de custos dos serviços do BigQuery, bem como seu uso, a fim de identificar onde estão os maiores gastos com a cloud.
 
 # :running: Quickstart
 
@@ -18,7 +20,7 @@ dbt_utils package. Read more about them [here](https://hub.getdbt.com/dbt-labs/d
 1. Include this package in your `packages.yml` file.
 ```yaml
 packages:
-  - git: "https://github.com/techindicium/dbt-airflow-monitoring.git" # insert git URL
+  - git: "https://github.com/techindicium/dbt-gcp-billing-monitoring.git" # insert git URL
 ```
 
 2. Run `dbt deps` to install the package.
