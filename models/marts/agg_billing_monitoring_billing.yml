@@ -1,0 +1,62 @@
+version: 2
+
+models:
+
+  - name: agg_billing_monitoring_billing
+    description: "Aggregated table of GCP billing data. It brings information on a macroscopic level of billing per billing account, service, sku and project over time."
+    columns:
+      - name: billing_sk
+        description: "Primary key of the table. Composed by: billing_account_id, service_sk, sku_sk, project_sk, location_sk and billing_date."
+        tests:
+          - not_null
+          - unique
+
+      - name: location_fk
+        description: "Foreign key of the table."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_billing_monitoring_locations')
+              field: location_sk
+
+      - name: project_fk
+        description: "Foreign key of the table."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_billing_monitoring_projects')
+              field: project_sk
+
+      - name: service_fk
+        description: "Foreign key of the table."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_billing_monitoring_services')
+              field: service_sk
+
+      - name: sku_fk
+        description: "Foreign key of the table."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_billing_monitoring_skus')
+              field: sku_sk
+
+      - name: billing_date
+        description: "The date of the usage period."
+
+      - name: usage_amount
+        description: "The amount of usage reported for the resource."
+
+      - name: usage_unit
+        description: "The units of the amount of usage reported for the resource."
+
+      - name: usage_amount_in_pricing_units
+        description: "The amount of usage in pricing units."
+
+      - name: usage_pricing_units
+        description: "The pricing units amount of usage in pricing units."
+
+      - name: cost_in_real
+        description: "The cost of the resource usage in the given currency, before any currency conversion is applied. Cost unit is Brazilian Real (R$)."

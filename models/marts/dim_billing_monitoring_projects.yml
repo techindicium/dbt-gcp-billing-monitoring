@@ -1,0 +1,36 @@
+version: 2
+
+models:
+
+  - name: dim_billing_monitoring_projects
+    description: "Dimension table of GCP billing projects, at project level."
+    columns:
+      - name: project_sk
+        description: "Primary key of the table. Composed by: project_id."
+        tests:
+          - not_null
+          - unique
+
+      - name: project_id
+        description: "The ID of the project associated with the billing data."
+
+      - name: project_number
+        description: "The number of the project associated with the billing data."
+
+      - name: project_name
+        description: "The name of the project associated with the billing data."
+
+      - name: project_labels_key
+        description: "The key of a label associated with the project."
+
+      - name: project_labels_value
+        description: "The value of a label associated with the project."
+
+      - name: project_ancestry_numbers
+        description: "The numeric IDs of the ancestors of the project, in order from the closest to the farthest ancestor."
+
+      - name: project_ancestors_resource_name
+        description: "The resource name of an ancestor of the project."
+
+      - name: project_ancestors_display_name
+        description: "The display name of an ancestor of the project."

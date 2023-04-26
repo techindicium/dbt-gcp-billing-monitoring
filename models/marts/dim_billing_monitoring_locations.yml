@@ -1,0 +1,24 @@
+version: 2
+
+models:
+
+  - name: dim_billing_monitoring_locations
+    description: "Dimension table of GCP billing locations, at location level."
+    columns:
+      - name: location_sk
+        description: "Primary key of the table. Composed by: location_location, location_region and location_zone."
+        tests:
+          - not_null
+          - unique
+
+      - name: location_location
+        description: "The resource location of the resource that generated the billing data."
+
+      - name: location_country
+        description: "The country of the resource location of the resource that generated the billing data."
+
+      - name: location_region
+        description: "The region of the resource location of the resource that generated the billing data."
+
+      - name: location_zone
+        description: "The zone of the resource location of the resource that generated the billing data."

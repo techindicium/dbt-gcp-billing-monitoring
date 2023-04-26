@@ -1,0 +1,18 @@
+version: 2
+
+models:
+
+  - name: dim_billing_monitoring_services
+    description: "Dimension table of GCP billing services, at service level."
+    columns:
+      - name: service_sk
+        description: "Primary key of the table. Composed by: service_id."
+        tests:
+          - not_null
+          - unique
+
+      - name: service_id
+        description: "Natural primary key of the table."
+
+      - name: service_description
+        description: "The description of the service that reported usage data."

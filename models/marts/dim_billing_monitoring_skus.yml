@@ -1,0 +1,18 @@
+version: 2
+
+models:
+
+  - name: dim_billing_monitoring_skus
+    description: "Dimension table of GCP billing skus, at sku level."
+    columns:
+      - name: sku_sk
+        description: "Primary key of the table. Composed by: sku_id."
+        tests:
+          - not_null
+          - unique
+
+      - name: sku_id
+        description: "Natural primary key of the table."
+
+      - name: sku_description
+        description: "The description of the SKU that reported usage data."

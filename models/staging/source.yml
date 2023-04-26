@@ -1,0 +1,160 @@
+version: 2
+
+sources:
+
+  - name: gcp_billing
+    description: "Data source containing billing information extracted from Google BigQuery."
+    schema: sandbox_varejo_billing
+    tables:
+      - name: gcp_billing_export_resource_v1_017006_67EE6C_8DAC3D
+        description: "This table contains daily statistics from the organization's BigQuery billing."
+        columns:
+          - name: billing_account_id
+            description: "The ID of the billing account associated with the billing data."
+
+          - name: service.id
+            description: "The ID of the service that reported usage data."
+
+          - name: service.description
+            description: "The description of the service that reported usage data."
+
+          - name: sku.id
+            description: "The ID of the SKU that reported usage data."
+
+          - name: sku.description
+            description: "The description of the SKU that reported usage data."
+
+          - name: usage_start_time
+            description: "The start time of the usage period, in UTC."
+
+          - name: usage_end_time
+            description: "The end time of the usage period, in UTC."
+
+          - name: billing_date
+            description: "The date of the usage period."
+
+          - name: project.id
+            description: "The ID of the project associated with the billing data."
+
+          - name: project.number
+            description: "The number of the project associated with the billing data."
+
+          - name: project.name
+            description: "The name of the project associated with the billing data."
+
+          - name: project.labels.key
+            description: "The key of a label associated with the project."
+
+          - name: project.labels.value
+            description: "The value of a label associated with the project."
+
+          - name: project.ancestry_numbers
+            description: "The numeric IDs of the ancestors of the project, in order from the closest to the farthest ancestor."
+
+          - name: project.ancestors.resource_name
+            description: "The resource name of an ancestor of the project."
+
+          - name: project.ancestors.display_name
+            description: "The display name of an ancestor of the project."
+
+          - name: labels.key
+            description: "The key of a label associated with the resource that generated the billing data."
+
+          - name: labels.value
+            description: "The value of a label associated with the resource that generated the billing data."
+
+          - name: system_labels.key
+            description: "The key of a system label associated with the resource that generated the billing data."
+
+          - name: system_labels.value
+            description: "The value of a system label associated with the resource that generated the billing data."
+
+          - name: location.location
+            description: "The resource location of the resource that generated the billing data."
+
+          - name: location.country
+            description: "The country of the resource location of the resource that generated the billing data."
+
+          - name: location.region
+            description: "The region of the resource location of the resource that generated the billing data."
+
+          - name: location.zone
+            description: "The zone of the resource location of the resource that generated the billing data."
+
+          - name: resource.name
+            description: "The name of the resource that generated the billing data."
+
+          - name: resource.global_name
+            description: "The globally unique name of the resource that generated the billing data."
+
+          - name: tags.key
+            description: "The key of a tag associated with the resource that generated the billing data."
+
+          - name: tags.value
+            description: "The value of a tag associated with the resource that generated the billing data."
+
+          - name: tags.inherited
+            description: "Indicates whether the tag associated with the resource that generated the billing data was inherited."
+
+          - name: tags.namespace
+            description: "The namespace of the tag associated with the resource that generated the billing data."
+
+          - name: export_time
+            description: "The time when the billing data was exported, in UTC."
+
+          - name: cost
+            description: "The cost of the resource usage in the given currency, before any currency conversion is applied."
+
+          - name: currency
+            description: "The currency in which the cost of the resource usage is expressed."
+
+          - name: currency_conversion_rate
+            description: "The currency conversion rate applied to the cost of the resource usage, if any."
+
+          - name: usage.amount
+            description: "The amount of usage reported for the resource."
+
+          - name: usage.unit
+            description: "The unit of usage for this line item."
+
+          - name: usage.amount_in_pricing_units
+            description: "The amount of usage in pricing units."
+
+          - name: usage.pricing_unit
+            description: "The unit of the pricing for this SKU."
+
+          - name: credits.name
+            description: "The name of the credit."
+
+          - name: credits.amount
+            description: "The amount of the credit."
+
+          - name: credits.full_name
+            description: "The full name of the credit."
+
+          - name: credits.id
+            description: "The unique identifier for the credit."
+
+          - name: credits.type
+            description: "The type of the credit."
+
+          - name: invoice.month
+            description: "The month for which the invoice was issued."
+
+          - name: cost_type
+            description: "The type of cost incurred (e.g. 'COST', 'REFUND', 'CREDIT_MEMO', 'TAX')."
+
+          - name: adjustment_info.id
+            description: "The unique identifier for the adjustment."
+
+          - name: adjustment_info.description
+            description: "The description of the adjustment."
+
+          - name: adjustment_info.mode
+            description: "The mode of the adjustment (e.g. 'DRIFT', 'REPRICE', 'PRICE', 'TAX', 'REFUND', 'CREDIT_MEMO', 'MANUAL', 'OTHER')."
+
+          - name: adjustment_info.type
+            description: "The type of the adjustment (e.g. 'CREDIT', 'CHARGE', 'RECEIPT', 'REFUND')."
+
+      - name: dbt_utils_days
+        description: "Data table created from a macro from dbt_utils."
