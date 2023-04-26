@@ -29,7 +29,7 @@ packages:
 
 The package's models can be configured in your `dbt_project.yml` by specifying the package under `models` and the billing data's start date you want to monitor must be declared in vars.
 
-# Model node
+### Models
 
 ```
 models:
@@ -42,7 +42,7 @@ models:
             - 'gcp_billing'
 ```
 
-# Vars
+### Vars
 
 ```
 vars:
@@ -54,7 +54,7 @@ vars:
 
 The project's sources can be configured in your `source.yml`, normally on your staging folder, by specifying the schema and table names of your billing data table. Since the name can be different by project, a name configuration is needed to ensure your package works.
 
-# Source configuration
+## Source configuration
 
 ```
 sources:
