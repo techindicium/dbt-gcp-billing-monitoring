@@ -27,7 +27,7 @@ packages:
 
 ## Configuring models package
 
-The package's models can be configured in your `dbt_project.yml` by specifying the package under `models` and the billing data's start date you want to monitor must be declared in vars.
+The package's models can be configured in your `dbt_project.yml` by specifying the package under `models` node. The billing data's start date you want to monitor also must be declared in vars node.
 
 ### Models
 
