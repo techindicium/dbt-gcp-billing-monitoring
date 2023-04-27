@@ -1,6 +1,6 @@
 # GCP Billing Monitoring
 
-This package allows you to easily monitor and manage your BigQuery cloud service and usage costs to help improving the billing of your project.
+This package allows you to easily monitor and manage your BigQuery cloud service and usage costs to help improving the billing management of your project.
 
 # :running: Quickstart
 
