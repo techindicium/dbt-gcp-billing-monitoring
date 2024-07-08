@@ -2,6 +2,15 @@
 
 This package allows you to easily monitor and manage your BigQuery cloud service and usage costs to help improving the billing management of your project.
 
+## Before creating a branch
+
+Pay attention, it is very important to know if your modification to this repository is a release (breaking changes), a feature (functionalities) or a patch(to fix bugs).
+With that information, create your branch name like this:
+
+* ```release/<branch-name>```
+* ```feature/<branch-name> ```
+* ```patch/<branch-name>```
+
 # :running: Quickstart
 
 New to dbt packages? Read more about them [here](https://docs.getdbt.com/docs/building-a-dbt-project/package-management/).
@@ -24,7 +33,6 @@ packages:
 2. Run `dbt deps` to install the package.
 
 
-
 ## Configuring models package
 
 The package's models can be configured in your `dbt_project.yml` by specifying the package under `models` node. The billing data's start date you want to monitor also must be declared in vars node.
@@ -39,7 +47,6 @@ models:
         marts:
             materialized: table
 ```
-
 ### Vars
 
 ```yaml
@@ -69,3 +76,11 @@ sources:
 ## Running the models
 
 After setting up the package in `dbt_project.yml` and `source.yml` as the previous steps, you can now run the package with the following command line: `dbt run -m gcp_billing_monitoring`. After running it, the 7 models of the package will materialize in your target schema as they have been configured.
+
+
+## New releases
+
+Want a new release (major/minor/patch) ?
+1. Push your modifications to main
+2. Push the tag you want, example: "git tag v1.0.1"
+3. git push origin tag v1.0.1 or git push --tags (warning: It pushes all tags you have)
