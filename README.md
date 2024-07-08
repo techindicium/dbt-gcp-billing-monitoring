@@ -76,11 +76,3 @@ sources:
 ## Running the models
 
 After setting up the package in `dbt_project.yml` and `source.yml` as the previous steps, you can now run the package with the following command line: `dbt run -m gcp_billing_monitoring`. After running it, the 7 models of the package will materialize in your target schema as they have been configured.
-
-
-## New releases
-
-Want a new release (major/minor/patch) ?
-1. Push your modifications to main
-2. Push the tag you want, example: "git tag v1.0.1"
-3. git push origin tag v1.0.1 or git push --tags (warning: It pushes all tags you have)
