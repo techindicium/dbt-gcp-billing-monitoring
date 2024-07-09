@@ -12,7 +12,7 @@ models:
           - unique
 
       - name: sku_id
-        description: "Natural primary key of the table."
+        description: '{{ doc("sku.id") }}'
 
       - name: sku_description
-        description: "The description of the SKU that reported usage data."
+        description: '{{ doc("sku_description") }}'

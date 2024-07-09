@@ -12,13 +12,13 @@ models:
           - unique
 
       - name: location_location
-        description: "The resource location of the resource that generated the billing data."
+        description: '{{ doc("location_location") }}'
 
       - name: location_country
-        description: "The country of the resource location of the resource that generated the billing data."
+        description: '{{ doc("location_country") }}'
 
       - name: location_region
-        description: "The region of the resource location of the resource that generated the billing data."
+        description: '{{ doc("location_region") }}'
 
       - name: location_zone
-        description: "The zone of the resource location of the resource that generated the billing data."
+        description: '{{ doc("location_zone") }}'

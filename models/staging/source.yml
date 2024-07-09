@@ -7,154 +7,154 @@ sources:
     schema: sandbox_varejo_billing
     tables:
       - name: gcp_billing_export_resource_v1_017006_67EE6C_8DAC3D
-        description: "This table contains daily statistics from the organization's BigQuery billing."
+        description: '{{ doc("gcp_billing_export_resource_v1_<BILLING_ACCOUNT_ID>") }}'
         columns:
           - name: billing_account_id
-            description: "The ID of the billing account associated with the billing data."
+            description: '{{ doc("billing_account_id") }}'
 
           - name: service.id
-            description: "The ID of the service that reported usage data."
+            description: '{{ doc("service.id") }}'
 
           - name: service.description
-            description: "The description of the service that reported usage data."
+            description: '{{ doc("service.description") }}'
 
           - name: sku.id
-            description: "The ID of the SKU that reported usage data."
+            description: '{{ doc("sku.id") }}'
 
           - name: sku.description
-            description: "The description of the SKU that reported usage data."
+            description: '{{ doc("sku.description") }}'
 
           - name: usage_start_time
-            description: "The start time of the usage period, in UTC."
+            description: '{{ doc("usage_start_time") }}'
 
           - name: usage_end_time
-            description: "The end time of the usage period, in UTC."
+            description: '{{ doc("usage_end_time") }}'
 
           - name: billing_date
-            description: "The date of the usage period."
+            description: '{{ doc("billing_date") }}'
 
           - name: project.id
-            description: "The ID of the project associated with the billing data."
+            description: '{{ doc("project.id") }}'
 
           - name: project.number
-            description: "The number of the project associated with the billing data."
+            description: '{{ doc("project.number") }}'
 
           - name: project.name
-            description: "The name of the project associated with the billing data."
+            description: '{{ doc("project.name") }}'
 
           - name: project.labels.key
-            description: "The key of a label associated with the project."
+            description: '{{ doc("project.labels.key") }}'
 
           - name: project.labels.value
-            description: "The value of a label associated with the project."
+            description: '{{ doc("project.labels.value") }}'
 
           - name: project.ancestry_numbers
-            description: "The numeric IDs of the ancestors of the project, in order from the closest to the farthest ancestor."
+            description: '{{ doc("project.ancestry_numbers") }}'
 
           - name: project.ancestors.resource_name
-            description: "The resource name of an ancestor of the project."
+            description: '{{ doc("project.ancestors.resource_name") }}'
 
           - name: project.ancestors.display_name
-            description: "The display name of an ancestor of the project."
+            description: '{{ doc("project.ancestors.display_name") }}'
 
           - name: labels.key
-            description: "The key of a label associated with the resource that generated the billing data."
+            description: '{{ doc("labels.key") }}'
 
           - name: labels.value
-            description: "The value of a label associated with the resource that generated the billing data."
+            description: '{{ doc("labels.value") }}'
 
           - name: system_labels.key
-            description: "The key of a system label associated with the resource that generated the billing data."
+            description: '{{ doc("system_labels.key") }}'
 
           - name: system_labels.value
-            description: "The value of a system label associated with the resource that generated the billing data."
+            description: '{{ doc("system_labels.value") }}'
 
           - name: location.location
-            description: "The resource location of the resource that generated the billing data."
+            description: '{{ doc("location.location") }}'
 
           - name: location.country
-            description: "The country of the resource location of the resource that generated the billing data."
+            description: '{{ doc("location.country") }}'
 
           - name: location.region
-            description: "The region of the resource location of the resource that generated the billing data."
+            description: '{{ doc("location.region") }}'
 
           - name: location.zone
-            description: "The zone of the resource location of the resource that generated the billing data."
+            description: '{{ doc("location.zone") }}'
 
           - name: resource.name
-            description: "The name of the resource that generated the billing data."
+            description: '{{ doc("resource.name") }}'
 
           - name: resource.global_name
-            description: "The globally unique name of the resource that generated the billing data."
+            description: '{{ doc("resource.global_name") }}'
 
           - name: tags.key
-            description: "The key of a tag associated with the resource that generated the billing data."
+            description: '{{ doc("tags.key") }}'
 
           - name: tags.value
-            description: "The value of a tag associated with the resource that generated the billing data."
+            description: '{{ doc("tags.value") }}'
 
           - name: tags.inherited
-            description: "Indicates whether the tag associated with the resource that generated the billing data was inherited."
+            description: '{{ doc("tags.inherited") }}'
 
           - name: tags.namespace
-            description: "The namespace of the tag associated with the resource that generated the billing data."
+            description: '{{ doc("tags.namespace") }}'
 
           - name: export_time
-            description: "The time when the billing data was exported, in UTC."
+            description: '{{ doc("export_time") }}'
 
           - name: cost
-            description: "The cost of the resource usage in the given currency, before any currency conversion is applied."
+            description: '{{ doc("cost") }}'
 
           - name: currency
-            description: "The currency in which the cost of the resource usage is expressed."
+            description: '{{ doc("currency") }}'
 
           - name: currency_conversion_rate
-            description: "The currency conversion rate applied to the cost of the resource usage, if any."
+            description: '{{ doc("currency_conversion_rate") }}'
 
           - name: usage.amount
-            description: "The amount of usage reported for the resource."
+            description: '{{ doc("usage.amount") }}'
 
           - name: usage.unit
-            description: "The unit of usage for this line item."
+            description: '{{ doc("usage.unit") }}'
 
           - name: usage.amount_in_pricing_units
-            description: "The amount of usage in pricing units."
+            description: '{{ doc("usage.amount_in_pricing_units") }}'
 
           - name: usage.pricing_unit
-            description: "The unit of the pricing for this SKU."
+            description: '{{ doc("usage.pricing_unit") }}'
 
           - name: credits.name
-            description: "The name of the credit."
+            description: '{{ doc("credits.name") }}'
 
           - name: credits.amount
-            description: "The amount of the credit."
+            description: '{{ doc("credits.amount") }}'
 
           - name: credits.full_name
-            description: "The full name of the credit."
+            description: '{{ doc("credits.full_name") }}'
 
           - name: credits.id
-            description: "The unique identifier for the credit."
+            description: '{{ doc("credits.id") }}'
 
           - name: credits.type
-            description: "The type of the credit."
+            description: '{{ doc("credits.type") }}'
 
           - name: invoice.month
-            description: "The month for which the invoice was issued."
+            description: '{{ doc("invoice.month") }}'
 
           - name: cost_type
-            description: "The type of cost incurred (e.g. 'COST', 'REFUND', 'CREDIT_MEMO', 'TAX')."
+            description: '{{ doc("cost_type") }}'
 
           - name: adjustment_info.id
-            description: "The unique identifier for the adjustment."
+            description: '{{ doc("adjustment_info.id") }}'
 
           - name: adjustment_info.description
-            description: "The description of the adjustment."
+            description: '{{ doc("adjustment_info.description") }}'
 
           - name: adjustment_info.mode
-            description: "The mode of the adjustment (e.g. 'DRIFT', 'REPRICE', 'PRICE', 'TAX', 'REFUND', 'CREDIT_MEMO', 'MANUAL', 'OTHER')."
+            description: '{{ doc("adjustment_info.mode") }}'
 
           - name: adjustment_info.type
-            description: "The type of the adjustment (e.g. 'CREDIT', 'CHARGE', 'RECEIPT', 'REFUND')."
+            description: '{{ doc("adjustment_info.type") }}'
 
       - name: dbt_utils_days
-        description: "Data table created from a macro from dbt_utils."
+        description: '{{ doc("dbt_utils_days") }}'
