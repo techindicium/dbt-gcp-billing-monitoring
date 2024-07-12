@@ -12,25 +12,25 @@ models:
           - unique
 
       - name: project_id
-        description: "The ID of the project associated with the billing data."
+        description: '{{ doc("project_id") }}'
 
       - name: project_number
-        description: "The number of the project associated with the billing data."
+        description: '{{ doc("project_number") }}'
 
       - name: project_name
-        description: "The name of the project associated with the billing data."
+        description: '{{ doc("project_name") }}'
 
       - name: project_labels_key
-        description: "The key of a label associated with the project."
+        description: '{{ doc("project_labels_key") }}'
 
       - name: project_labels_value
-        description: "The value of a label associated with the project."
+        description: '{{ doc("project_labels_value") }}'
 
       - name: project_ancestry_numbers
-        description: "The numeric IDs of the ancestors of the project, in order from the closest to the farthest ancestor."
+        description: '{{ doc("project_ancestry_numbers") }}'
 
       - name: project_ancestors_resource_name
-        description: "The resource name of an ancestor of the project."
+        description: '{{ doc("project_ancestors_resource_name") }}'
 
       - name: project_ancestors_display_name
-        description: "The display name of an ancestor of the project."
+        description: '{{ doc("project_ancestors_display_name") }}'

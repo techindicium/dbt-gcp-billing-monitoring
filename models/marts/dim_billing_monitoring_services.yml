@@ -12,7 +12,7 @@ models:
           - unique
 
       - name: service_id
-        description: "Natural primary key of the table."
+        description: '{{ doc("service_id") }}'
 
       - name: service_description
-        description: "The description of the service that reported usage data."
+        description: '{{ doc("service_description") }}'

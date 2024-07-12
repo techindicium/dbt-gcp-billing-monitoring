@@ -111,7 +111,7 @@ with
             , usage_unit
             , sum(usage_amount_in_pricing_units) as usage_amount_in_pricing_units
             , usage_pricing_units
-            , sum(cost) as cost_in_real
+            , sum(cost) as total_cost
         from joined
         group by
             billing_sk
