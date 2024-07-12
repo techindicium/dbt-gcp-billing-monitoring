@@ -28,7 +28,7 @@ deprecated in a future release of dbt-utils. The {}.{} model triggered this warn
 {%- for field in field_list_xf -%}
 
     {%- set _ = fields.append(
-       "coalesce(cast(" ~ field ~ " as " ~ dbt_utils.type_string() ~ "), '')"
+       "coalesce(cast(" ~ field ~ " as " ~ dbt.type_string() ~ "), '')"
    ) -%}
 
    {%- if not loop.last %}
@@ -37,6 +37,6 @@ deprecated in a future release of dbt-utils. The {}.{} model triggered this warn
 
 {%- endfor -%}
 
-farm_fingerprint({{dbt_utils.concat(fields)}})
+farm_fingerprint({{dbt.concat(fields)}})
 
 {%- endmacro -%}

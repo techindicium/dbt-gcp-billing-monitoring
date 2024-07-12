@@ -56,7 +56,7 @@ models:
         description: '{{ doc("usage_amount_in_pricing_units") }}'
 
       - name: usage_pricing_units
-        description: '{{ doc("usage_pricing_units") }}'
+        description: '{{ doc("usage_pricing_unit") }}'
 
-      - name: cost_in_real
-        description: '{{ doc("cost_in_real") }}'
+      - name: total_cost
+        description: '{{ doc("total_cost") }}'

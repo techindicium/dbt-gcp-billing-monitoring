@@ -6,8 +6,8 @@ with
             , service.description as service_description
             , sku.id as sku_id
             , sku.description as sku_description
-            , datetime(usage_start_time, "America/Sao_Paulo") as usage_start_time
-            , datetime(usage_end_time, "America/Sao_Paulo") as usage_end_time
+            , datetime(usage_start_time, "{{ var('gcp_billing_monitoring')['timezone'] }}") as usage_start_time
+            , datetime(usage_end_time, "{{ var('gcp_billing_monitoring')['timezone'] }}") as usage_end_time
             , cast(usage_start_time as date) as billing_date
             , project.id as project_id
             , project.number as project_number
@@ -47,7 +47,7 @@ with
             , tags[safe_offset(0)].value as tags_value
             , tags[safe_offset(0)].inherited as tags_inherited
             , tags[safe_offset(0)].namespace as tags_namespace
-            , datetime(export_time, "America/Sao_Paulo") as export_date
+            , datetime(export_time, "{{ var('gcp_billing_monitoring')['timezone'] }}") as export_date
             , cast(cost as numeric) as cost
             , currency
             , cast(currency_conversion_rate as numeric) as currency_conversion_rate
@@ -66,7 +66,7 @@ with
             , adjustment_info.description as adjustment_info_description
             , adjustment_info.mode as adjustment_info_mode
             , adjustment_info.type as adjustment_info_type
-        from {{ source('gcp_billing','gcp_billing_export_resource_v1_017006_67EE6C_8DAC3D') }}
+        from {{ source( 'gcp_billing', var('gcp_billing_monitoring')['table_name'] ) }}
         where project.id = "{{ target.project }}"
     )
 select *

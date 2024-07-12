@@ -4,25 +4,25 @@ sources:
 
   - name: gcp_billing
     description: "Data source containing billing information extracted from Google BigQuery."
-    schema: sandbox_varejo_billing
+    schema: "{{ var('gcp_billing_monitoring')['schema'] }}"
     tables:
-      - name: gcp_billing_export_resource_v1_017006_67EE6C_8DAC3D
-        description: '{{ doc("gcp_billing_export_resource_v1_<BILLING_ACCOUNT_ID>") }}'
+      - name: "{{ var('gcp_billing_monitoring')['table_name'] }}"
+        description: '{{ doc("gcp_billing_export_resource_v1_billing_account_id") }}'
         columns:
           - name: billing_account_id
             description: '{{ doc("billing_account_id") }}'
 
           - name: service.id
-            description: '{{ doc("service.id") }}'
+            description: '{{ doc("service_id") }}'
 
           - name: service.description
-            description: '{{ doc("service.description") }}'
+            description: '{{ doc("service_description") }}'
 
           - name: sku.id
-            description: '{{ doc("sku.id") }}'
+            description: '{{ doc("sku_id") }}'
 
           - name: sku.description
-            description: '{{ doc("sku.description") }}'
+            description: '{{ doc("sku_description") }}'
 
           - name: usage_start_time
             description: '{{ doc("usage_start_time") }}'
@@ -34,70 +34,70 @@ sources:
             description: '{{ doc("billing_date") }}'
 
           - name: project.id
-            description: '{{ doc("project.id") }}'
+            description: '{{ doc("project_id") }}'
 
           - name: project.number
-            description: '{{ doc("project.number") }}'
+            description: '{{ doc("project_number") }}'
 
           - name: project.name
-            description: '{{ doc("project.name") }}'
+            description: '{{ doc("project_name") }}'
 
           - name: project.labels.key
-            description: '{{ doc("project.labels.key") }}'
+            description: '{{ doc("project_labels_key") }}'
 
           - name: project.labels.value
-            description: '{{ doc("project.labels.value") }}'
+            description: '{{ doc("project_labels_value") }}'
 
           - name: project.ancestry_numbers
-            description: '{{ doc("project.ancestry_numbers") }}'
+            description: '{{ doc("project_ancestry_numbers") }}'
 
           - name: project.ancestors.resource_name
-            description: '{{ doc("project.ancestors.resource_name") }}'
+            description: '{{ doc("project_ancestors_resource_name") }}'
 
           - name: project.ancestors.display_name
-            description: '{{ doc("project.ancestors.display_name") }}'
+            description: '{{ doc("project_ancestors_display_name") }}'
 
           - name: labels.key
-            description: '{{ doc("labels.key") }}'
+            description: '{{ doc("labels_key") }}'
 
           - name: labels.value
-            description: '{{ doc("labels.value") }}'
+            description: '{{ doc("labels_value") }}'
 
           - name: system_labels.key
-            description: '{{ doc("system_labels.key") }}'
+            description: '{{ doc("system_labels_key") }}'
 
           - name: system_labels.value
-            description: '{{ doc("system_labels.value") }}'
+            description: '{{ doc("system_labels_value") }}'
 
           - name: location.location
-            description: '{{ doc("location.location") }}'
+            description: '{{ doc("location_location") }}'
 
           - name: location.country
-            description: '{{ doc("location.country") }}'
+            description: '{{ doc("location_country") }}'
 
           - name: location.region
-            description: '{{ doc("location.region") }}'
+            description: '{{ doc("location_region") }}'
 
           - name: location.zone
-            description: '{{ doc("location.zone") }}'
+            description: '{{ doc("location_zone") }}'
 
           - name: resource.name
-            description: '{{ doc("resource.name") }}'
+            description: '{{ doc("resource_name") }}'
 
           - name: resource.global_name
-            description: '{{ doc("resource.global_name") }}'
+            description: '{{ doc("resource_global_name") }}'
 
           - name: tags.key
-            description: '{{ doc("tags.key") }}'
+            description: '{{ doc("tags_key") }}'
 
           - name: tags.value
-            description: '{{ doc("tags.value") }}'
+            description: '{{ doc("tags_value") }}'
 
           - name: tags.inherited
-            description: '{{ doc("tags.inherited") }}'
+            description: '{{ doc("tags_inherited") }}'
 
           - name: tags.namespace
-            description: '{{ doc("tags.namespace") }}'
+            description: '{{ doc("tags_namespace") }}'
 
           - name: export_time
             description: '{{ doc("export_time") }}'
@@ -112,49 +112,49 @@ sources:
             description: '{{ doc("currency_conversion_rate") }}'
 
           - name: usage.amount
-            description: '{{ doc("usage.amount") }}'
+            description: '{{ doc("usage_amount") }}'
 
           - name: usage.unit
-            description: '{{ doc("usage.unit") }}'
+            description: '{{ doc("usage_unit") }}'
 
           - name: usage.amount_in_pricing_units
-            description: '{{ doc("usage.amount_in_pricing_units") }}'
+            description: '{{ doc("usage_amount_in_pricing_units") }}'
 
           - name: usage.pricing_unit
-            description: '{{ doc("usage.pricing_unit") }}'
+            description: '{{ doc("usage_pricing_unit") }}'
 
           - name: credits.name
-            description: '{{ doc("credits.name") }}'
+            description: '{{ doc("credits_name") }}'
 
           - name: credits.amount
-            description: '{{ doc("credits.amount") }}'
+            description: '{{ doc("credits_amount") }}'
 
           - name: credits.full_name
-            description: '{{ doc("credits.full_name") }}'
+            description: '{{ doc("credits_full_name") }}'
 
           - name: credits.id
-            description: '{{ doc("credits.id") }}'
+            description: '{{ doc("credits_id") }}'
 
           - name: credits.type
-            description: '{{ doc("credits.type") }}'
+            description: '{{ doc("credits_type") }}'
 
           - name: invoice.month
-            description: '{{ doc("invoice.month") }}'
+            description: '{{ doc("invoice_month") }}'
 
           - name: cost_type
             description: '{{ doc("cost_type") }}'
 
           - name: adjustment_info.id
-            description: '{{ doc("adjustment_info.id") }}'
+            description: '{{ doc("adjustment_info_id") }}'
 
           - name: adjustment_info.description
-            description: '{{ doc("adjustment_info.description") }}'
+            description: '{{ doc("adjustment_info_description") }}'
 
           - name: adjustment_info.mode
-            description: '{{ doc("adjustment_info.mode") }}'
+            description: '{{ doc("adjustment_info_mode") }}'
 
           - name: adjustment_info.type
-            description: '{{ doc("adjustment_info.type") }}'
+            description: '{{ doc("adjustment_info_type") }}'
 
       - name: dbt_utils_days
         description: '{{ doc("dbt_utils_days") }}'

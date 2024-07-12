@@ -12,7 +12,7 @@ models:
           - unique
 
       - name: sku_id
-        description: '{{ doc("sku.id") }}'
+        description: '{{ doc("sku_id") }}'
 
       - name: sku_description
         description: '{{ doc("sku_description") }}'

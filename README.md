@@ -52,26 +52,15 @@ models:
 ```yaml
 vars:
     gcp_billing_monitoring:
-       gcp_billing_monitoring_start_date: cast('2023-01-01' as date) # inside the double quotes, add the start date of the project
+      schema: bigquery_dataset # insert BigQuery dataset name where the GCP billing export table is materialized
+      table_name: gcp_billing_export_resource_v1_<BILLING_ACCOUNT_ID>
+      timezone: UTC # insert the project timezone you use or UTC for default
+      gcp_billing_monitoring_start_date: cast('2023-01-01' as date) # inside the double quotes, add the start date of the project
 ```
 
 ## Configuring project sources
 
 The project's sources can be configured in your `source.yml`, normally on your staging folder, by specifying the schema and table names of your billing data table. Since the name can be different by project, a name configuration is needed to ensure your package works.
-
-### Source configuration
-
-```yaml
-sources:
-
-  - name: gcp_billing
-    description: "Data source containing billing information extracted from Google BigQuery."
-    schema: sandbox_varejo_billing # add the name of your schema where the billing data will be stored
-    tables:
-      - name: table_name_gcp_billing_export_resource # add the billing export table name
-        description: "This table contains daily statistics from the organization's BigQuery billing."
-        columns:
-```
 
 ## Running the models
 
